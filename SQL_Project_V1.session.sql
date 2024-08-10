@@ -28,3 +28,29 @@ COPY customer_behavior
 FROM '/tmp/E-commerce Customer Behavior - Sheet1.csv'
 DELIMITER ',' CSV HEADER;
 
+-- Now we we have our table initialized, we want to do some analysis!
+/* First, let's try to understand our data more.
+Grouped by membership, what is the average total spend? */
+
+SELECT 
+AVG(spend) AS "Avg Spend", 
+AVG(items_purchase) AS "Items Purchase", 
+AVG(days_since_purchase) AS "Days since last purchase",  
+memb
+FROM customer_behavior
+
+GROUP BY memb
+ORDER BY "Avg Spend";
+
+/* We are seeing that both the average spend, items purchased
+and days since last spend all correlate with the increasing
+of the membership type.
+
+Now, let's check out the demographics of each membership type*/
+
+SELECT ROUND(AVG(age), 2) AS "rounded age", memb
+FROM customer_behavior
+GROUP BY memb
+ORDER BY "rounded age" ASC;
+
+
