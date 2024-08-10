@@ -108,3 +108,17 @@ among our lower-tier members.
 
 Now let's look at how discounts play into this.
 
+Firstly I'd like to understand which membership group is getting the 
+most discounts.*/
+
+SELECT COUNT(discount), memb
+FROM customer_behavior
+WHERE discount IS TRUE
+GROUP BY memb;
+
+/*Looks like discounts are spread evenly accross the memberships, which
+means the sales team is probably doing a good job, but doesn't help us
+determine why those lower tier users are less satisfied. We might not be
+able to get to the "why" from these queries alone, if there's such an 
+even spread of demographics and discounts.*/
+
