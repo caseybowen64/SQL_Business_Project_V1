@@ -1,7 +1,6 @@
 #Product Demo Project
 
-This project will demonstrate an example use case of SQL and R for data analysis in the software development world.
-In my years as a Product Manager, this is a common problem we faced.
+This project will demonstrate an example use case of SQL for data analysis in the software development world.
 
 We will be using sample customer data to look at purchase rate as it correlates with other customer behaviors and identifies to try to determine specific qualities of customers purchasing more frequently.
 
